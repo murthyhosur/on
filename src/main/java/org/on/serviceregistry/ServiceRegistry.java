@@ -1,6 +1,7 @@
 package org.on.serviceregistry;
 
 import java.io.FileReader;
+import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Date;
@@ -105,8 +106,8 @@ public class ServiceRegistry {
 		List<EntityValues> entityValues = new ArrayList<EntityValues>();
 		Properties prop = new Properties();
 		try {
-			FileReader reader = new FileReader("resources/SR.properties");
-			prop.load(reader);
+			InputStream is = ServiceRegistry.class.getResourceAsStream("SR.properties");
+			prop.load(is);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -142,8 +143,8 @@ public class ServiceRegistry {
 		List<EntityValues> entityValues = new ArrayList<EntityValues>();
 		Properties prop = new Properties();
 		try {
-			FileReader reader = new FileReader("resources/SR.properties");
-			prop.load(reader);
+			InputStream is = ServiceRegistry.class.getResourceAsStream("SR.properties");
+			prop.load(is);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
